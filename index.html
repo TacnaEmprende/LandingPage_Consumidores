@@ -96,6 +96,22 @@
     .consumer-footer-links a{color:#eee5ff;text-decoration:none;font-size:12px;font-weight:800}
     .consumer-footer-links a:hover{color:var(--umart-peach)}
     .consumer-footer small{color:#c4b7d9;font-size:11px}
+    /* Polished discovery controls */
+    .consumer-nav{position:relative;z-index:10}
+    .consumer-nav .login{transition:transform .2s,box-shadow .2s}.consumer-nav .login:hover{transform:translateY(-2px);box-shadow:0 8px 20px #35107135}
+    .consumer-hero{position:relative;isolation:isolate}.consumer-hero:before{content:"";position:absolute;z-index:-1;width:430px;height:430px;left:-260px;bottom:-230px;border:1px solid #ff69351c;border-radius:50%;box-shadow:0 0 0 42px #ff693508,0 0 0 84px #ff693505}
+    .consumer-hero h1{max-width:630px}.consumer-hero h1 em{color:var(--umart-orange);font-style:normal}
+    .consumer-actions .consumer-btn{min-width:190px}
+    .consumer-section#descubre{scroll-margin-top:20px}
+    .discovery-tools{grid-template-columns:minmax(220px,1fr) minmax(200px,.55fr) auto;margin-bottom:12px}
+    .discovery-tools input,.discovery-tools select{min-height:52px;box-shadow:0 4px 14px #35107108;transition:border-color .2s,box-shadow .2s}
+    .discovery-tools input:focus,.discovery-tools select:focus{outline:3px solid #ff693526;border-color:var(--umart-orange);box-shadow:0 0 0 1px var(--umart-orange)}
+    .discovery-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 22px;color:var(--umart-muted);font-size:12px}
+    .discovery-count{font-weight:800;color:var(--umart-purple)}.discovery-reset{padding:7px 11px;border:1px solid #ded5eb;border-radius:99px;background:#fff;color:var(--umart-purple);font:inherit;font-size:12px;font-weight:800;cursor:pointer;transition:background .2s,color .2s}.discovery-reset:hover{background:var(--umart-purple);color:#fff}.discovery-reset[hidden]{display:none}
+    .consumer-product{position:relative}.consumer-product img{transition:transform .55s}.consumer-product:hover img{transform:scale(1.045)}.consumer-product-copy{min-height:180px}.consumer-product h3{letter-spacing:-.3px}.consumer-card-link{display:flex;align-items:center;gap:7px}.consumer-card-link:after{content:"";width:18px;height:1px;background:currentColor;transition:width .2s}.consumer-product:hover .consumer-card-link:after{width:29px}
+    .consumer-demo{background:#fff5ed;border:1px solid #ffe0d0}
+    .consumer-map-platform{width:100%}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
     @media(max-width:950px){.consumer-hero-grid{gap:30px}.consumer-hero-visual{min-height:390px}.consumer-benefits{grid-template-columns:repeat(2,1fr)}.consumer-products{grid-template-columns:repeat(2,minmax(0,1fr))}.trust-strip{grid-template-columns:repeat(3,1fr)}.trust-intro{grid-column:1/-1;text-align:center}}
     @media(max-width:820px){.consumer-wrap{width:90%}.consumer-nav{height:70px}.consumer-nav .logo-image{width:122px}.consumer-menu{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--umart-line);border-radius:12px;background:#fff;color:var(--umart-purple);font-size:21px}.consumer-nav-links{position:absolute;z-index:8;top:68px;left:5%;right:5%;display:none;align-items:stretch;gap:0;padding:8px;border:1px solid var(--umart-line);border-radius:15px;background:#fff;box-shadow:0 14px 30px #3510711a}.consumer-nav-links.is-open{display:flex;flex-direction:column}.consumer-nav-links a{padding:12px}.consumer-nav>.login{display:none}.consumer-hero{padding:35px 0 50px}.consumer-hero-grid{grid-template-columns:1fr}.consumer-hero h1{font-size:clamp(42px,12vw,60px);letter-spacing:-1.8px}.consumer-hero p{font-size:16px}.consumer-hero-visual{min-height:350px;max-width:530px;width:100%;margin:0 auto}.trust-strip{grid-template-columns:1fr;gap:13px;padding:20px}.trust-intro{text-align:left}.consumer-section{padding:65px 0}.consumer-section-heading{margin-bottom:28px}.discovery-tools{grid-template-columns:1fr 1fr}.consumer-step{padding:22px}.reviews-panel{grid-template-columns:1fr;padding:25px}.consumer-footer-inner{align-items:flex-start;flex-direction:column}}
     @media(max-width:850px){.consumer-map-shell{grid-template-columns:1fr}.consumer-map-frame{height:390px}}
@@ -174,7 +190,9 @@
       <div class="discovery-tools" role="search">
         <label class="sr-only" for="consumer-search">Buscar producto o categoría</label><input id="consumer-search" type="search" placeholder="Busca un producto o categoría…" autocomplete="off">
         <label class="sr-only" for="consumer-category">Filtrar por categoría</label><select id="consumer-category"><option value="all">Elegir categoría</option><option value="food">Comida y bebidas</option><option value="crafts">Artesanía</option><option value="agriculture">Productos regionales</option><option value="fashion">Moda</option><option value="technology">Tecnología</option><option value="digital">Servicios digitales</option></select>
+        <a class="consumer-btn" href="https://campus-emprende.vercel.app/">Ver en UMART <span aria-hidden="true">↗</span></a>
       </div>
+      <div class="discovery-meta"><span class="discovery-count" id="consumer-count" aria-live="polite"></span><button class="discovery-reset" id="consumer-reset" type="button" hidden>Limpiar filtros</button></div>
       <div class="consumer-products" id="consumer-products">
         <article class="consumer-product" data-category="crafts" data-search="artesanía recuerdos locales tacna"><a href="https://campus-emprende.vercel.app/"><img src="assets/Pictures.png/Artesanía.png" alt="Artesanías y recuerdos de Tacna" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Artesanía · Tacna</span><h3>Artesanía y recuerdos locales</h3><p>Detalles creativos inspirados en nuestra ciudad.</p><span class="consumer-card-link">Abrir la plataforma →</span></div></a></article>
         <article class="consumer-product" data-category="food" data-search="comida anticuchos tacneños"><a href="https://campus-emprende.vercel.app/"><img src="assets/Pictures.png/comida.png" alt="Anticuchos preparados en Tacna" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Comida · Tacna</span><h3>Antojos tacneños</h3><p>Una muestra de sabores preparados para compartir.</p><span class="consumer-card-link">Abrir la plataforma →</span></div></a></article>
@@ -233,8 +251,9 @@
       const category=document.querySelector('#consumer-category');
       const cards=[...document.querySelectorAll('.consumer-product[data-category]')];
       const empty=document.querySelector('#consumer-empty');
-      const filter=()=>{const term=(query.value||'').trim().toLocaleLowerCase('es');let visible=0;cards.forEach(card=>{const categoryMatch=category.value==='all'||card.dataset.category===category.value;const textMatch=!term||card.dataset.search.includes(term);card.hidden=!(categoryMatch&&textMatch);if(!card.hidden)visible++});empty.hidden=visible>0};
-      query.addEventListener('input',filter);category.addEventListener('change',filter);filter();
+      const count=document.querySelector('#consumer-count');const reset=document.querySelector('#consumer-reset');
+      const filter=()=>{const term=(query.value||'').trim().toLocaleLowerCase('es');let visible=0;cards.forEach(card=>{const categoryMatch=category.value==='all'||card.dataset.category===category.value;const textMatch=!term||card.dataset.search.includes(term);card.hidden=!(categoryMatch&&textMatch);if(!card.hidden)visible++});empty.hidden=visible>0;count.textContent=`${visible} ${visible===1?'opción visible':'opciones visibles'} · ejemplos de la vitrina`;reset.hidden=!term&&category.value==='all'};
+      query.addEventListener('input',filter);category.addEventListener('change',filter);reset.addEventListener('click',()=>{query.value='';category.value='all';filter();query.focus()});filter();
       const menu=document.querySelector('.consumer-menu');const links=document.querySelector('#consumer-navigation');
       menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');links.classList.toggle('is-open',open)});
       links.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Abrir menú');links.classList.remove('is-open')}));
