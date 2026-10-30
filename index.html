@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descubre productos, sabores y emprendimientos de Tacna y la comunidad universitaria en la vitrina digital UMART.">
+  <title>UMART para ti | Descubre lo que Tacna tiene para ofrecer</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    :root{--umart-purple:#351071;--umart-orange:#ff6935;--umart-peach:#ffb08d;--umart-ink:#142b43;--umart-muted:#607387;--umart-lilac:#f7f4fb;--umart-line:#e7e0f0}
+    body.consumer-page{font-family:Arial,Helvetica,sans-serif;color:var(--umart-ink);background:#fff;overflow-x:hidden}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .consumer-wrap{max-width:1240px;width:88%;margin:0 auto}
+    .consumer-nav{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .consumer-nav .logo-image{display:block;width:142px;height:auto}
+    .consumer-nav-links{display:flex;align-items:center;gap:24px;color:#526477;font-weight:700;font-size:14px}
+    .consumer-nav-links a{color:inherit;text-decoration:none}.consumer-nav-links a:hover{color:var(--umart-purple)}
+    .consumer-nav .login{padding:12px 18px;border-radius:12px;background:var(--umart-purple);color:#fff;text-decoration:none;font-size:13px;font-weight:900}
+    .consumer-menu{display:none}
+    .consumer-hero{padding:54px 0 76px;background:radial-gradient(ellipse at 88% 12%,#f0e8ff 0,transparent 37%),linear-gradient(180deg,#fff,#fbf9fe)}
+    .consumer-hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:58px}
+    .consumer-kicker{display:inline-flex;align-items:center;gap:9px;color:var(--umart-orange);font-size:12px;font-weight:900;letter-spacing:1.7px;text-transform:uppercase}
+    .consumer-kicker:before{content:"";width:24px;height:2px;background:currentColor}
+    .consumer-hero h1{max-width:650px;margin:16px 0;color:var(--umart-purple);font-size:clamp(42px,6vw,70px);font-weight:900;letter-spacing:-2.8px;line-height:.99}
+    .consumer-hero p{max-width:570px;margin:20px 0 0;color:var(--umart-muted);font-size:18px;line-height:1.65}
+    .consumer-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
+    .consumer-btn{display:inline-flex;min-height:52px;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border:1px solid transparent;border-radius:13px;background:var(--umart-purple);color:#fff;text-decoration:none;font-weight:900;box-shadow:0 8px 18px #35107124;transition:transform .2s,box-shadow .2s,background .2s}
+    .consumer-btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px #35107130}
+    .consumer-btn.orange{background:var(--umart-orange);box-shadow:0 8px 18px #ff69352b}
+    .consumer-btn.light{background:#fff;color:var(--umart-purple);border-color:#ded5eb;box-shadow:none}
+    .consumer-hero-visual{position:relative;min-height:480px;display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:1fr .78fr;gap:14px;transform:rotate(1deg)}
+    .consumer-photo{position:relative;overflow:hidden;border:6px solid #fff;border-radius:24px;box-shadow:0 20px 46px #35107120;background:#eee8f5}
+    .consumer-photo img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s}
+    .consumer-photo:hover img{transform:scale(1.04)}
+    .consumer-photo:first-child{grid-row:1/3}
+    .consumer-photo:nth-child(2) img{object-position:center 36%}
+    .consumer-photo:nth-child(3) img{object-position:center 42%}
+    .consumer-photo-caption{position:absolute;left:13px;right:13px;bottom:13px;padding:11px 13px;border-radius:12px;background:#fff;color:var(--umart-purple);font-size:12px;font-weight:900;box-shadow:0 5px 15px #24123d1a}
+    .consumer-float-note{position:absolute;z-index:2;top:26px;right:-13px;padding:11px 15px;border-radius:12px;background:var(--umart-orange);color:white;font-size:13px;font-weight:900;box-shadow:0 10px 22px #ff693544;transform:rotate(4deg)}
+    .trust-strip{display:grid;grid-template-columns:1.35fr repeat(3,1fr);align-items:center;gap:20px;padding:23px 26px;border:1px solid var(--umart-line);border-radius:18px;background:#fff;box-shadow:0 12px 32px #3510710d}
+    .trust-intro{color:var(--umart-muted);font-size:13px;line-height:1.5}
+    .trust-item{display:flex;align-items:center;gap:10px;color:var(--umart-purple);font-size:13px;font-weight:900}
+    .trust-icon{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#f2ecfb;color:var(--umart-orange);font-size:18px}
+    .consumer-section{padding:86px 0}
+    .consumer-section.soft{background:var(--umart-lilac)}
+    .consumer-section-heading{text-align:center;max-width:750px;margin:0 auto 38px}
+    .consumer-section-heading h2{margin:11px 0;color:var(--umart-purple);font-size:clamp(30px,4vw,46px);line-height:1.1;letter-spacing:-1.3px}
+    .consumer-section-heading p{margin:0;color:var(--umart-muted);font-size:16px;line-height:1.65}
+    .consumer-benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+    .consumer-benefit{padding:25px 22px;border:1px solid var(--umart-line);border-radius:18px;background:white;box-shadow:0 10px 28px #3510710a;transition:transform .2s,box-shadow .2s}
+    .consumer-benefit:hover{transform:translateY(-4px);box-shadow:0 16px 32px #35107114}
+    .consumer-benefit-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:#f1eafd;color:var(--umart-purple);font-size:23px}
+    .consumer-benefit h3{margin:18px 0 8px;color:var(--umart-purple);font-size:18px}
+    .consumer-benefit p{margin:0;color:var(--umart-muted);font-size:14px;line-height:1.6}
+    .discovery-tools{display:grid;grid-template-columns:minmax(210px,1fr) minmax(210px,.65fr) auto;gap:12px;align-items:center;margin-bottom:24px}
+    .discovery-tools input,.discovery-tools select{width:100%;min-height:48px;padding:11px 14px;border:1px solid #d9d0e5;border-radius:12px;background:#fff;color:var(--umart-purple);font:inherit;font-size:14px}
+    .consumer-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .consumer-product{overflow:hidden;border:1px solid #eee8f4;border-radius:20px;background:#fff;box-shadow:0 12px 30px #35107110;transition:transform .22s,box-shadow .22s}
+    .consumer-product:hover{transform:translateY(-5px);box-shadow:0 18px 35px #3510711a}
+    .consumer-product[hidden]{display:none}
+    .consumer-product>a{height:100%;display:flex;flex-direction:column;color:inherit;text-decoration:none}
+    .consumer-product img{width:100%;height:230px;display:block;object-fit:cover;background:#f4f0f8}
+    .consumer-product-copy{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:19px 20px 20px}
+    .consumer-tag{color:var(--umart-orange);font-size:10px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase}
+    .consumer-product h3{margin:9px 0 8px;color:var(--umart-purple);font-size:19px;line-height:1.25}
+    .consumer-product p{margin:0;color:var(--umart-muted);font-size:13px;line-height:1.55}
+    .consumer-card-link{margin-top:auto;padding-top:15px;color:var(--umart-purple);font-size:13px;font-weight:900}
+    .consumer-demo{display:inline-flex;margin-top:12px;padding:6px 9px;border-radius:20px;background:#fff3ed;color:#a34020;font-size:10px;font-weight:900}
+    .consumer-empty{grid-column:1/-1;padding:28px;border:1px dashed #cfc2df;border-radius:16px;color:var(--umart-muted);text-align:center}
+    .consumer-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:steps}
+    .consumer-step{position:relative;padding:28px 25px;border-radius:18px;background:#fff;border:1px solid var(--umart-line);counter-increment:steps}
+    .consumer-step:before{content:"0" counter(steps);display:inline-grid;width:44px;height:44px;place-items:center;border-radius:14px;background:var(--umart-purple);color:#fff;font-size:14px;font-weight:900}
+    .consumer-step h3{margin:18px 0 8px;color:var(--umart-purple);font-size:19px}
+    .consumer-step p{margin:0;color:var(--umart-muted);font-size:14px;line-height:1.6}
+    .reviews-panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center;padding:34px;border:1px solid var(--umart-line);border-radius:22px;background:#fff;box-shadow:0 16px 36px #3510710d}
+    .review-mark{color:var(--umart-orange);font-size:44px;line-height:1}
+    .reviews-panel h3{margin:10px 0;color:var(--umart-purple);font-size:24px}
+    .reviews-panel p{margin:0;color:var(--umart-muted);font-size:14px;line-height:1.7}
+    .review-status{padding:20px;border-radius:16px;background:var(--umart-lilac);color:var(--umart-purple);font-size:14px;line-height:1.6}
+    .consumer-faq{max-width:850px;margin:0 auto}
+    .consumer-faq details{border-bottom:1px solid var(--umart-line)}
+    .consumer-faq summary{display:flex;justify-content:space-between;gap:18px;padding:20px 5px;color:var(--umart-purple);font-weight:900;cursor:pointer;list-style:none}
+    .consumer-faq summary::-webkit-details-marker{display:none}
+    .consumer-faq summary:after{content:"+";color:var(--umart-orange);font-size:22px;line-height:1}
+    .consumer-faq details[open] summary:after{content:"−"}
+    .consumer-faq details p{margin:0;padding:0 38px 20px 5px;color:var(--umart-muted);font-size:14px;line-height:1.7}
+    .consumer-final{padding:58px 6%;border-radius:26px;background:linear-gradient(125deg,#351071,#51209a);color:white;text-align:center;box-shadow:0 20px 42px #3510712b}
+    .consumer-final h2{margin:0 auto 12px;max-width:700px;font-size:clamp(30px,4.5vw,46px);line-height:1.1}
+    .consumer-final p{max-width:650px;margin:0 auto;color:#eee5ff;font-size:16px;line-height:1.65}
+    .consumer-final .consumer-btn{margin-top:23px;background:var(--umart-orange)}
+    .entrepreneur-confirm{width:min(540px,calc(100% - 32px));padding:0;border:0;border-radius:22px;box-shadow:0 24px 70px #1c0a3b55;color:var(--umart-ink)}.entrepreneur-confirm::backdrop{background:#1c0a3b99;backdrop-filter:blur(3px)}.entrepreneur-confirm-content{padding:32px}.entrepreneur-confirm h2{margin:12px 0;color:var(--umart-purple);font-size:30px}.entrepreneur-confirm p{color:var(--umart-muted);font-size:15px;line-height:1.65}.entrepreneur-confirm .consumer-actions{margin-top:20px}.consumer-footer{margin-top:80px;padding:38px 0;background:#211044;color:#fff}
+    .consumer-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .consumer-footer-brand img{width:130px;height:auto;filter:brightness(0) invert(1)}
+    .consumer-footer-brand p{max-width:320px;color:#d6cce6;font-size:12px;line-height:1.6}
+    .consumer-footer-links{display:flex;flex-wrap:wrap;gap:18px}
+    .consumer-footer-links a{color:#eee5ff;text-decoration:none;font-size:12px;font-weight:800}
+    .consumer-footer-links a:hover{color:var(--umart-peach)}
+    .consumer-footer small{color:#c4b7d9;font-size:11px}
+    @media(max-width:950px){.consumer-hero-grid{gap:30px}.consumer-hero-visual{min-height:390px}.consumer-benefits{grid-template-columns:repeat(2,1fr)}.consumer-products{grid-template-columns:repeat(2,minmax(0,1fr))}.trust-strip{grid-template-columns:repeat(3,1fr)}.trust-intro{grid-column:1/-1;text-align:center}}
+    @media(max-width:820px){.consumer-wrap{width:90%}.consumer-nav{height:70px}.consumer-nav .logo-image{width:122px}.consumer-menu{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--umart-line);border-radius:12px;background:#fff;color:var(--umart-purple);font-size:21px}.consumer-nav-links{position:absolute;z-index:8;top:68px;left:5%;right:5%;display:none;align-items:stretch;gap:0;padding:8px;border:1px solid var(--umart-line);border-radius:15px;background:#fff;box-shadow:0 14px 30px #3510711a}.consumer-nav-links.is-open{display:flex;flex-direction:column}.consumer-nav-links a{padding:12px}.consumer-nav>.login{display:none}.consumer-hero{padding:35px 0 50px}.consumer-hero-grid{grid-template-columns:1fr}.consumer-hero h1{font-size:clamp(42px,12vw,60px);letter-spacing:-1.8px}.consumer-hero p{font-size:16px}.consumer-hero-visual{min-height:350px;max-width:530px;width:100%;margin:0 auto}.trust-strip{grid-template-columns:1fr;gap:13px;padding:20px}.trust-intro{text-align:left}.consumer-section{padding:65px 0}.consumer-section-heading{margin-bottom:28px}.discovery-tools{grid-template-columns:1fr 1fr}.consumer-step{padding:22px}.reviews-panel{grid-template-columns:1fr;padding:25px}.consumer-footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:850px){.consumer-map-shell{grid-template-columns:1fr}.consumer-map-frame{height:390px}}
+    @media(max-width:520px){.consumer-map-frame{height:320px}.consumer-actions{flex-direction:column;align-items:stretch}.consumer-btn{width:100%}.consumer-hero-visual{min-height:300px;gap:9px}.consumer-photo{border-width:4px;border-radius:17px}.consumer-photo-caption{left:8px;right:8px;bottom:8px;padding:8px;font-size:10px}.consumer-float-note{right:-4px;top:13px;font-size:11px}.consumer-benefits,.consumer-products,.consumer-steps{grid-template-columns:1fr}.consumer-product img{height:245px}.discovery-tools{grid-template-columns:1fr}.consumer-final{padding:42px 22px}.consumer-footer-links{gap:14px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+    .consumer-map-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(340px,.9fr);gap:20px;align-items:stretch}.consumer-map-card,.consumer-map-sidebar{overflow:hidden;border:1px solid #e4deeb;border-radius:22px;background:#fff;box-shadow:0 16px 38px #35107112}.consumer-map-toolbar{height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 19px;border-bottom:1px solid #ece7f1;color:#263549;font-size:13px}.consumer-map-toolbar>span:first-child{display:flex;align-items:center;gap:10px}.consumer-map-dot{width:10px;height:10px;border-radius:50%;background:#ff6935;box-shadow:0 0 0 4px #ff69351a}.consumer-map-region{color:#788493;font-size:11px}.consumer-map-frame{height:540px;position:relative;background:#e8e6eb}.consumer-map-frame iframe{display:block;width:100%;height:100%;border:0}.consumer-map-label{position:absolute;left:15px;top:15px;display:grid;gap:4px;padding:12px 14px;border-radius:10px;background:#fff;color:#351071;box-shadow:0 5px 18px #1f183327;pointer-events:none}.consumer-map-label strong{font-size:12px;letter-spacing:1px}.consumer-map-label span{color:#607387;font-size:10px}.consumer-map-source{position:absolute;left:14px;bottom:14px;padding:7px 10px;border-radius:7px;background:#fff;color:#607387;font-size:10px;font-weight:800;box-shadow:0 4px 12px #1f183322;pointer-events:none}.consumer-map-sidebar{padding:22px;display:flex;flex-direction:column}.consumer-map-sidebar-heading .consumer-kicker{font-size:10px}.consumer-map-sidebar h3{margin:7px 0;color:#351071;font-size:23px;line-height:1.1}.consumer-map-sidebar-heading p{margin:0;color:#607387;font-size:12px;line-height:1.55}.consumer-map-filters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:17px 0 12px}.consumer-map-filters label{display:grid;gap:6px;color:#351071;font-size:10px;font-weight:900}.consumer-map-filters select{width:100%;min-height:42px;padding:9px 28px 9px 10px;border:1px solid #ded7e8;border-radius:9px;background:#fff;color:#351071;font:inherit;font-size:11px}.consumer-map-no-zones{padding:16px;border-radius:10px;background:#f7f4fb;color:#607387;font-size:11px;line-height:1.5}.consumer-map-zones{display:grid;gap:4px;max-height:250px;overflow:auto;padding-right:3px}.consumer-map-zone{width:100%;display:grid;grid-template-columns:32px minmax(0,1fr) 16px;align-items:center;gap:9px;padding:9px 8px;border:1px solid transparent;border-radius:10px;background:#fff;color:#263549;text-align:left;font:inherit;cursor:pointer;transition:background .18s,border-color .18s}.consumer-map-zone:hover,.consumer-map-zone.active{border-color:#c9b8e0;background:#f7f4fb}.consumer-map-zone-icon{width:29px;height:29px;display:grid;place-items:center;border-radius:8px;background:#f1eafd;color:#351071;font-size:14px}.consumer-map-zone strong,.consumer-map-zone small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.consumer-map-zone strong{font-size:11px}.consumer-map-zone small{margin-top:3px;color:#788493;font-size:9px}.consumer-map-zone-arrow{color:#ff6935;font-size:18px}.consumer-map-selected{margin-top:auto;padding:15px 0 0;border-top:1px solid #e9e4ed}.consumer-map-selected-kicker{color:#ff6935;font-size:9px;font-weight:900;letter-spacing:1.2px}.consumer-map-selected h4{margin:7px 0 4px;color:#351071;font-size:19px}.consumer-map-selected p{margin:0;color:#607387;font-size:11px;line-height:1.5}.consumer-map-directions[hidden]{display:none!important}.consumer-map-directions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px;padding:12px 13px;border-radius:9px;background:#351071;color:#fff;text-decoration:none;font-size:11px;font-weight:900;box-shadow:0 7px 15px #35107125}.consumer-map-directions:hover{background:#4b168e}.consumer-map-platform{width:100%;margin-top:11px;min-height:43px;padding:11px 13px;border-radius:9px;font-size:11px}.consumer-map-disclaimer{margin:12px 0 0!important;color:#788493;font-size:10px!important;line-height:1.55!important}@media(max-width:920px){.consumer-map-layout{grid-template-columns:1fr}.consumer-map-frame{height:420px}.consumer-map-sidebar{min-height:0}.consumer-map-zones{max-height:300px}}@media(max-width:560px){.consumer-map-frame{height:340px}.consumer-map-sidebar{padding:17px}.consumer-map-toolbar{padding:0 13px}.consumer-map-region{display:none}.consumer-map-filters{grid-template-columns:1fr}.consumer-map-zones{max-height:260px}}
+  </style>
+</head>
+<body class="consumer-page" id="inicio">
+  <header class="consumer-wrap">
+    <nav class="consumer-nav" aria-label="Navegación principal">
+      <a href="#inicio" aria-label="UMART, volver al inicio de esta página"><img class="logo-image" src="assets/LOGO_UMART.png" alt="UMART"></a>
+      <button class="consumer-menu" type="button" aria-expanded="false" aria-controls="consumer-navigation" aria-label="Abrir menú">☰</button>
+      <div class="consumer-nav-links" id="consumer-navigation">
+        <a href="#descubre">Descubre</a><a href="#beneficios">¿Por qué UMART?</a><a href="#mapa-cercano">Mapa</a><a href="#pasos">Cómo funciona</a><a href="#preguntas">Preguntas</a>
+      </div>
+      <a class="login" href="https://campus-emprende.vercel.app/">Ir a la plataforma</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="consumer-hero">
+      <div class="consumer-wrap consumer-hero-grid">
+        <div>
+          <span class="consumer-kicker">Lo bueno está más cerca</span>
+          <h1>Descubre algo especial. Encuéntralo en Tacna.</h1>
+          <p>Desde sabores de nuestra tierra hasta ideas creadas por estudiantes: explora productos locales, conoce quién los hace y conversa directamente para resolver tus dudas.</p>
+          <div class="consumer-actions"><a class="consumer-btn orange" href="https://campus-emprende.vercel.app/">Explorar productos <span aria-hidden="true">→</span></a><a class="consumer-btn light" href="#descubre">Descubrir opciones <span aria-hidden="true">⌕</span></a></div>
+        </div>
+        <div class="consumer-hero-visual" aria-label="Mosaico de productos y productores de Tacna">
+          <span class="consumer-float-note">Hecho y creado cerca de ti</span>
+          <div class="consumer-photo"><img src="assets/Pictures.png/Productores_Aceitunas.png" alt="Ilustración de una productora de aceitunas de Tacna" fetchpriority="high"><span class="consumer-photo-caption">Sabores que cuentan historias</span></div>
+          <div class="consumer-photo"><img src="assets/Pictures.png/Artesanía.png" alt="Artesanías y recuerdos locales de Tacna" loading="lazy"><span class="consumer-photo-caption">Creaciones locales</span></div>
+          <div class="consumer-photo"><img src="assets/Pictures.png/Postree.png" alt="Postre de chocolate de ejemplo universitario" loading="lazy"><span class="consumer-photo-caption">Ideas universitarias</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="consumer-wrap" aria-label="Lo que encontrarás en UMART"><div class="trust-strip">
+      <div class="trust-intro"><strong>Una vitrina para descubrir lo que se crea y produce en nuestra región.</strong><br>Explora distintas propuestas en un solo lugar.</div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">⌂</span>Comercios locales</div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">✦</span>Productores de Tacna</div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">🎓</span>Comunidad universitaria</div>
+    </div></section>
+
+    <section class="consumer-section" id="beneficios"><div class="consumer-wrap">
+      <div class="consumer-section-heading"><span class="consumer-kicker">Tu próxima buena elección</span><h2>Buscar algo local puede ser así de sencillo</h2><p>UMART reúne muestras de distintos rubros para que explores opciones, conozcas su origen y encuentres cómo contactar a cada iniciativa.</p></div>
+      <div class="consumer-benefits">
+        <article class="consumer-benefit"><span class="consumer-benefit-icon" aria-hidden="true">⌕</span><h3>Encuentra con facilidad</h3><p>Busca por producto, categoría o actividad y descubre alternativas sin recorrer varios lugares.</p></article>
+        <article class="consumer-benefit"><span class="consumer-benefit-icon" aria-hidden="true">♡</span><h3>Conoce quién lo hace</h3><p>Acércate a las historias detrás de los productos y proyectos que llaman tu atención.</p></article>
+        <article class="consumer-benefit"><span class="consumer-benefit-icon" aria-hidden="true">✆</span><h3>Conversa directamente</h3><p>Consulta disponibilidad, precios y entrega con cada negocio por sus canales publicados.</p></article>
+        <article class="consumer-benefit"><span class="consumer-benefit-icon" aria-hidden="true">⌖</span><h3>Explora lo cercano</h3><p>Descubre propuestas universitarias, comercios y productos regionales de Tacna.</p></article>
+      </div>
+    </div></section>
+
+
+
+    <section class="consumer-section soft consumer-map-section" id="mapa-cercano"><div class="consumer-wrap">
+      <div class="consumer-section-heading"><span class="consumer-kicker">Más cerca de tu comunidad</span><h2>Encuentra qué explorar cerca de ti</h2><p>Elige un distrito y un rubro para consultar zonas comerciales de referencia y continuar tu búsqueda en la plataforma.</p></div>
+      <div class="consumer-map-layout">
+        <div class="consumer-map-card"><div class="consumer-map-toolbar"><span><i class="consumer-map-dot" aria-hidden="true"></i><strong data-consumer-map-title>Explora comercios · Tacna</strong></span><span class="consumer-map-region">Tacna, Perú</span></div><div class="consumer-map-frame"><iframe id="consumer-map-frame" title="Mapa de zonas comerciales de Tacna" src="https://www.google.com/maps?q=Av.+Coronel+Mendoza%2C+Tacna%2C+Peru&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><div class="consumer-map-label"><strong data-consumer-map-district>TACNA</strong><span>Zonas para explorar</span></div><div class="consumer-map-source">Mapa de referencia · Google Maps</div></div></div>
+        <aside class="consumer-map-sidebar" aria-label="Filtra zonas para explorar">
+          <div class="consumer-map-sidebar-heading"><span class="consumer-kicker">Explora a tu ritmo</span><h3>¿Qué estás buscando?</h3><p>Filtra por distrito y categoría. Elige una zona para ubicarla en el mapa.</p></div>
+          <div class="consumer-map-filters"><label for="consumer-map-district">Distrito<select id="consumer-map-district"><option value="Tacna">Tacna</option><option value="Alto de la Alianza">Alto de la Alianza</option><option value="Calana">Calana</option><option value="Ciudad Nueva">Ciudad Nueva</option><option value="Coronel Gregorio Albarracín Lanchipa">Gregorio Albarracín</option><option value="Inclán">Inclán</option><option value="Pachía">Pachía</option><option value="Palca">Palca</option><option value="Pocollay">Pocollay</option><option value="Sama">Sama</option></select></label><label for="consumer-map-category">Categoría<select id="consumer-map-category"><option value="all">Todas las categorías</option><option value="food">Gastronomía</option><option value="products">Productos y mercados</option><option value="services">Servicios</option><option value="fashion">Vestimenta</option><option value="crafts">Artesanía</option></select></label></div>
+          <div class="consumer-map-zones" data-consumer-map-zones role="group" aria-label="Zonas comerciales"></div>
+          <div class="consumer-map-selected" aria-live="polite"><span class="consumer-map-selected-kicker" data-consumer-zone-type>ZONA COMERCIAL DE REFERENCIA</span><h4 data-consumer-zone-name>Av. Coronel Mendoza</h4><p data-consumer-zone-description>Mercadillos, galerías y variedad de productos.</p><a class="consumer-map-directions" data-consumer-zone-link href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Coronel+Mendoza+Tacna+Peru" target="_blank" rel="noopener noreferrer">Ver zona en Google Maps <span aria-hidden="true">↗</span></a></div>
+          <a class="consumer-btn orange consumer-map-platform" href="https://campus-emprende.vercel.app/">Descubrir productos en UMART →</a>
+          <p class="consumer-map-disclaimer">Son zonas de referencia; el mapa no representa vendedores afiliados ni disponibilidad confirmada. Los perfiles y reseñas aparecerán cuando se cuente con datos verificados.</p>
+        </aside>
+      </div>
+    </div></section>
+
+    <section class="consumer-section soft" id="descubre"><div class="consumer-wrap">
+      <div class="consumer-section-heading"><span class="consumer-kicker">La vitrina de Tacna</span><h2>¿Qué se te antoja descubrir?</h2><p>Explora ejemplos de distintos rubros; las tarjetas enlazan con la plataforma UMART para consultar su oferta actual. Los productos de productores están identificados como ejemplos visuales.</p></div>
+      <div class="discovery-tools" role="search">
+        <label class="sr-only" for="consumer-search">Buscar producto o categoría</label><input id="consumer-search" type="search" placeholder="Busca un producto o categoría…" autocomplete="off">
+        <label class="sr-only" for="consumer-category">Filtrar por categoría</label><select id="consumer-category"><option value="all">Elegir categoría</option><option value="food">Comida y bebidas</option><option value="crafts">Artesanía</option><option value="agriculture">Productos regionales</option><option value="fashion">Moda</option><option value="technology">Tecnología</option><option value="digital">Servicios digitales</option></select>
+      </div>
+      <div class="consumer-products" id="consumer-products">
+        <article class="consumer-product" data-category="crafts" data-search="artesanía recuerdos locales tacna"><a href="https://campus-emprende.vercel.app/"><img src="assets/Pictures.png/Artesanía.png" alt="Artesanías y recuerdos de Tacna" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Artesanía · Tacna</span><h3>Artesanía y recuerdos locales</h3><p>Detalles creativos inspirados en nuestra ciudad.</p><span class="consumer-card-link">Abrir la plataforma →</span></div></a></article>
+        <article class="consumer-product" data-category="food" data-search="comida anticuchos tacneños"><a href="https://campus-emprende.vercel.app/"><img src="assets/Pictures.png/comida.png" alt="Anticuchos preparados en Tacna" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Comida · Tacna</span><h3>Antojos tacneños</h3><p>Una muestra de sabores preparados para compartir.</p><span class="consumer-card-link">Abrir la plataforma →</span></div></a></article>
+        <article class="consumer-product" data-category="food" data-search="postres repostería chocolate universidad"><a href="https://campus-emprende.vercel.app/"><img src="assets/Pictures.png/Postree.png" alt="Postre de chocolate de ejemplo universitario" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Repostería · Universidad</span><h3>Postres y repostería</h3><p>Ideas dulces que nacen en la comunidad estudiantil.</p><span class="consumer-card-link">Abrir la plataforma →</span></div></a></article>
+        <article class="consumer-product" data-category="agriculture" data-search="aceitunas aceite oliva productores tacna"><div><img src="assets/Pictures.png/Productores_Aceitunas.png" alt="Ilustración referencial de una productora de aceitunas y aceite de oliva" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Productos regionales</span><h3>Aceitunas y aceite de oliva</h3><p>Una muestra de productos asociados a la producción olivícola de Tacna.</p><span class="consumer-demo">Muestra ilustrativa</span></div></div></article>
+        <article class="consumer-product" data-category="agriculture" data-search="orégano productores tacna"><div><img src="assets/Pictures.png/Productores_Oregano.png" alt="Ilustración referencial de un productor de orégano" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Productos regionales</span><h3>Orégano de Tacna</h3><p>Conoce una muestra visual dedicada a un cultivo emblemático de la región.</p><span class="consumer-demo">Muestra ilustrativa</span></div></div></article>
+        <article class="consumer-product" data-category="agriculture" data-search="queso artesanal tarata candarave productores"><div><img src="assets/Pictures.png/Productores_Quesos.png" alt="Ilustración referencial de quesos artesanales de Tarata y Candarave" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Productos regionales</span><h3>Quesos artesanales</h3><p>Una muestra de productos elaborados en las provincias altas.</p><span class="consumer-demo">Muestra ilustrativa</span></div></div></article>
+        <article class="consumer-product" data-category="food" data-search="pisco tacna productores bebida"><div><img src="assets/Pictures.png/Productores_Pisco.png" alt="Ilustración referencial de productora y pisco de Tacna" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Bebidas · Tacna</span><h3>Pisco de Tacna</h3><p>Una muestra ilustrativa de productos vitivinícolas regionales.</p><span class="consumer-demo">Muestra ilustrativa</span></div></div></article>
+        <article class="consumer-product" data-category="food" data-search="vino vinos tacneños productores"><div><img src="assets/Pictures.png/Productores_Vinos.png" alt="Ilustración referencial de vinos tacneños" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Bebidas · Tacna</span><h3>Vinos tacneños</h3><p>Descubre una muestra visual inspirada en los viñedos de la región.</p><span class="consumer-demo">Muestra ilustrativa</span></div></div></article>
+        <article class="consumer-product" data-category="technology" data-search="audífonos tecnología accesorios universidad"><a href="https://campus-emprende.vercel.app/"><img src="assets/Pictures.png/Audifonos.png" alt="Audífonos inalámbricos de ejemplo" loading="lazy"><div class="consumer-product-copy"><span class="consumer-tag">Tecnología · Universidad</span><h3>Accesorios y equipos</h3><p>Productos prácticos compartidos por proyectos universitarios.</p><span class="consumer-card-link">Abrir la plataforma →</span></div></a></article>
+        <div class="consumer-empty" id="consumer-empty" hidden>No encontramos muestras con esa búsqueda. Prueba otra palabra o categoría.</div>
+      </div>
+    </div></section>
+
+    <section class="consumer-section" id="pasos"><div class="consumer-wrap">
+      <div class="consumer-section-heading"><span class="consumer-kicker">Tres pasos para empezar</span><h2>De la curiosidad a la conversación</h2><p>Explora primero; si algo te interesa, consulta directamente con quien lo ofrece.</p></div>
+      <div class="consumer-steps">
+        <article class="consumer-step"><h3>Explora la vitrina</h3><p>Busca por categoría o recorre las galerías de comercios y proyectos universitarios.</p></article>
+        <article class="consumer-step"><h3>Conoce los detalles</h3><p>Revisa la muestra, el rubro y la información disponible para decidir qué consultar.</p></article>
+        <article class="consumer-step"><h3>Contacta al negocio</h3><p>Escribe por los canales que el emprendimiento tenga publicados para coordinar disponibilidad, pago y entrega.</p></article>
+      </div>
+    </div></section>
+
+    <section class="consumer-section soft" id="opiniones"><div class="consumer-wrap">
+      <div class="consumer-section-heading"><span class="consumer-kicker">Opiniones de la comunidad</span><h2>Queremos escuchar tu experiencia</h2><p>La confianza también se construye compartiendo opiniones auténticas.</p></div>
+      <div class="reviews-panel"><div><div class="review-mark" aria-hidden="true">“</div><h3>Las reseñas verificadas tendrán su espacio aquí.</h3><p>UMART todavía no muestra valoraciones reales de compradores. Cuando esa función esté disponible, esta sección podrá presentar comentarios auténticos con autorización de sus autores.</p></div><div class="review-status"><strong>Por ahora:</strong> revisa la información de cada muestra y consulta directamente con el emprendimiento antes de coordinar tu compra. Las imágenes señaladas como ilustrativas no representan una oferta confirmada ni disponibilidad actual.</div></div>
+    </div></section>
+
+    <section class="consumer-section" id="preguntas"><div class="consumer-wrap">
+      <div class="consumer-section-heading"><span class="consumer-kicker">Estamos para ayudarte</span><h2>Preguntas frecuentes</h2><p>Lo esencial para explorar UMART con claridad.</p></div>
+      <div class="consumer-faq">
+        <details><summary>¿UMART vende los productos directamente?</summary><p>Esta página te ayuda a conocer UMART. Al elegir “Ver la vitrina en UMART” irás a la plataforma para explorar las opciones disponibles.</p></details>
+        <details><summary>¿Las imágenes del catálogo corresponden a productos disponibles?</summary><p>Algunas son ejemplos de galerías y las de productores están identificadas como ilustrativas. Confirma siempre los detalles con el negocio; la página no garantiza stock ni precios.</p></details>
+        <details><summary>¿Cómo contacto a una persona emprendedora?</summary><p>Abre la plataforma para revisar las opciones disponibles y los canales de contacto que cada emprendimiento haya publicado. Las muestras ilustrativas de productores de esta página todavía no enlazan a perfiles o vendedores reales.</p></details>
+        <details><summary>¿Puedo encontrar opciones universitarias y de toda Tacna?</summary><p>Sí. Explora las galerías separadas de Universidad y Todo Tacna para ver ejemplos de distintas categorías.</p></details>
+        <details><summary>¿Puedo dejar una reseña o comprar desde un carrito?</summary><p>El carrito, los pagos dentro de la plataforma y las reseñas verificadas aún no están habilitados en esta vitrina.</p></details>
+      </div>
+    </div></section>
+
+
+
+    <section class="consumer-section soft" id="para-emprendedores"><div class="consumer-wrap"><div class="consumer-section-heading"><span class="consumer-kicker">¿También tienes un negocio?</span><h2>Conoce la experiencia para emprendedores</h2><p>Esta página está pensada para quienes buscan productos. Si quieres conocer el espacio informativo dirigido a negocios y productores, puedes abrirlo cuando tú decidas.</p><button class="consumer-btn light" id="open-entrepreneur-confirm" type="button">Ver información para emprendedores →</button></div></div></section>
+
+    <dialog class="entrepreneur-confirm" id="entrepreneur-confirm" aria-labelledby="entrepreneur-confirm-title"><div class="entrepreneur-confirm-content"><span class="consumer-kicker">Vas a cambiar de sección</span><h2 id="entrepreneur-confirm-title">Información para emprendedores</h2><p>El siguiente enlace abre el landing dirigido a emprendedores, comercios y productores de UMART. ¿Quieres continuar?</p><div class="consumer-actions"><a class="consumer-btn orange" href="../html/landingPage.html">Sí, abrir landing para emprendedores →</a><button class="consumer-btn light" id="close-entrepreneur-confirm" type="button">No, seguir aquí</button></div></div></dialog>
+
+    <section class="consumer-wrap"><div class="consumer-final"><h2>Hoy puedes descubrir algo hecho cerca de ti.</h2><p>Explora productos, conoce nuevas ideas y encuentra una opción que te gustaría probar.</p><a class="consumer-btn" href="https://campus-emprende.vercel.app/">Ver la vitrina en UMART <span aria-hidden="true">→</span></a></div></section>
+  </main>
+
+  <footer class="consumer-footer"><div class="consumer-wrap consumer-footer-inner">
+    <div class="consumer-footer-brand"><a href="#inicio" aria-label="Volver al inicio de esta página"><img src="assets/LOGO_UMART.png" alt="UMART"></a><p>Una vitrina digital para descubrir el talento, los productos y las iniciativas de Tacna.</p><small id="privacidad">Esta demostración no procesa pagos ni solicita datos personales. Al abrir redes o contactar a un negocio, aplican las condiciones del canal externo.</small></div>
+    <div class="consumer-footer-links"><a href="#inicio">Inicio</a><a href="#descubre">Descubre</a><a href="https://campus-emprende.vercel.app/">Plataforma</a><a href="https://www.facebook.com/share/1Eifq7oRbf/" target="_blank" rel="noopener noreferrer">Contacto</a><a href="#privacidad">Privacidad</a><a href="https://www.facebook.com/share/1Eifq7oRbf/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.tiktok.com/@_umart_1" target="_blank" rel="noopener noreferrer">TikTok</a></div>
+  </div></footer>
+  <script>
+    (()=>{
+      const query=document.querySelector('#consumer-search');
+      const category=document.querySelector('#consumer-category');
+      const cards=[...document.querySelectorAll('.consumer-product[data-category]')];
+      const empty=document.querySelector('#consumer-empty');
+      const filter=()=>{const term=(query.value||'').trim().toLocaleLowerCase('es');let visible=0;cards.forEach(card=>{const categoryMatch=category.value==='all'||card.dataset.category===category.value;const textMatch=!term||card.dataset.search.includes(term);card.hidden=!(categoryMatch&&textMatch);if(!card.hidden)visible++});empty.hidden=visible>0};
+      query.addEventListener('input',filter);category.addEventListener('change',filter);filter();
+      const menu=document.querySelector('.consumer-menu');const links=document.querySelector('#consumer-navigation');
+      menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');links.classList.toggle('is-open',open)});
+      links.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Abrir menú');links.classList.remove('is-open')}));
+      const district=document.querySelector('#consumer-map-district');
+      const mapCategory=document.querySelector('#consumer-map-category');
+      const mapFrame=document.querySelector('#consumer-map-frame');
+      const zoneList=document.querySelector('[data-consumer-map-zones]');
+      const mapTitle=document.querySelector('[data-consumer-map-title]');
+      const mapDistrict=document.querySelector('[data-consumer-map-district]');
+      const zoneType=document.querySelector('[data-consumer-zone-type]');
+      const zoneName=document.querySelector('[data-consumer-zone-name]');
+      const zoneDescription=document.querySelector('[data-consumer-zone-description]');
+      const zoneLink=document.querySelector('[data-consumer-zone-link]');
+      const zonesByDistrict={
+        'Tacna':[
+          {name:'Av. Coronel Mendoza',detail:'Mercadillos, galerías y variedad de productos.',icon:'▣',categories:['products','fashion','services'],query:'Av. Coronel Mendoza, Tacna, Perú'},
+          {name:'Mercado Central',detail:'Mercado tradicional y productos locales.',icon:'⌖',categories:['food','products'],query:'Mercado Central, Tacna, Perú'},
+          {name:'Mercado Grau',detail:'Puestos de alimentos y comercio local.',icon:'⌖',categories:['food','products'],query:'Mercado Grau, Tacna, Perú'},
+          {name:'Mercado 2 de Mayo',detail:'Comercio y productos para el día a día.',icon:'⌖',categories:['food','products'],query:'Mercado 2 de Mayo, Tacna, Perú'},
+          {name:'Mercadillo Bolognesi',detail:'Tiendas y puestos de distintos rubros.',icon:'▣',categories:['products','fashion','crafts'],query:'Mercadillo Bolognesi, Tacna, Perú'},
+          {name:'Centro de Tacna',detail:'Tiendas, servicios y negocios de la ciudad.',icon:'↗',categories:['all'],query:'Centro de Tacna, Perú'}
+        ]
+      };
+      const categoryLabels={food:'gastronomía',products:'productos y mercados',services:'servicios',fashion:'vestimenta',crafts:'artesanía'};
+      const getZones=()=>zonesByDistrict[district.value]||[{name:`Comercio local · ${district.options[district.selectedIndex].text}`,detail:'Área comercial general del distrito; consulta los puntos disponibles en el mapa.',icon:'⌖',categories:['all'],query:`comercios en ${district.value}, Tacna, Perú`}];
+      const focusZone=(zone,button)=>{
+        zoneList.querySelectorAll('.consumer-map-zone').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+        const selectedCategory=mapCategory.value==='all'?'':`${categoryLabels[mapCategory.value]} en `;
+        const mapQuery=`${selectedCategory}${zone.query}`;const encoded=encodeURIComponent(mapQuery);
+        mapFrame.src=`https://www.google.com/maps?q=${encoded}&output=embed`;mapFrame.title=`Mapa de ${zone.name}, ${district.value}, Tacna`;
+        mapTitle.textContent=`Explora comercios · ${district.options[district.selectedIndex].text}`;mapDistrict.textContent=district.options[district.selectedIndex].text.toLocaleUpperCase('es');
+        zoneType.textContent='ZONA COMERCIAL DE REFERENCIA';zoneName.textContent=zone.name;zoneDescription.textContent=zone.detail;
+        zoneLink.href=`https://www.google.com/maps/search/?api=1&query=${encoded}`;
+      };
+      const renderConsumerZones=()=>{
+        const chosen=mapCategory.value;const zones=getZones().filter(zone=>chosen==='all'||zone.categories.includes('all')||zone.categories.includes(chosen));
+        if(!zones.length){zoneList.innerHTML='<p class="consumer-map-no-zones">No hay una zona de referencia para esta categoría. Prueba otro rubro.</p>';zoneType.textContent='SIN ZONAS PARA ESTE FILTRO';zoneName.textContent='Prueba otra categoría';zoneDescription.textContent='Esta lista muestra zonas generales y no perfiles de comercios registrados.';zoneLink.hidden=true;return}
+        zoneLink.hidden=false;
+        const buttons=zones.map(zone=>{const button=document.createElement('button');button.type='button';button.className='consumer-map-zone';button.setAttribute('aria-pressed','false');const icon=document.createElement('span');icon.className='consumer-map-zone-icon';icon.textContent=zone.icon;const copy=document.createElement('span');const title=document.createElement('strong');title.textContent=zone.name;const detail=document.createElement('small');detail.textContent=zone.detail;copy.append(title,detail);const arrow=document.createElement('b');arrow.className='consumer-map-zone-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='›';button.append(icon,copy,arrow);button.addEventListener('click',()=>focusZone(zone,button));return button});zoneList.replaceChildren(...buttons);focusZone(zones[0],buttons[0]);
+      };
+      district.addEventListener('change',renderConsumerZones);mapCategory.addEventListener('change',renderConsumerZones);renderConsumerZones();
+      const dialog=document.querySelector('#entrepreneur-confirm');document.querySelector('#open-entrepreneur-confirm').addEventListener('click',()=>dialog.showModal());document.querySelector('#close-entrepreneur-confirm').addEventListener('click',()=>dialog.close());
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
+
